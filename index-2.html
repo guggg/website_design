@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600');
+		@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+		*{
+			font-family: "Josefin Sans","Noto Sans TC";
+		}
+		body,h1,h2,h3,h4,h5,h6,ul,li,p{
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		a{
+			text-decoration: none;
+			color:#000;
+		}
+		img{
+			width: 100%;
+		}
+		.fixed-width{
+			width: 960px;
+			margin:auto;
+		}
+		.full-width{
+			width: 100%;
+		}
+		.col-2{
+			width: calc(100% / 2 - 30px);
+			float: left;
+			margin: 0 15px;
+		}
+		.col-3{
+			width: calc(100% / 3 - 30px);
+			float: left;
+			margin: 0 15px;
+		}
+		.col-4{
+			width: calc(100% / 4 - 30px);
+			float: left;
+			margin: 0 15px;
+		}
+		.wraper{
+			width: 100%;
+			height: 100%;
+			background-image: url(jorik-blom-366499.jpg);
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-attachment: fixed;
+			background-position: center;
+		}
+		nav{
+			background-color: transparent;
+			position: fixed;
+			z-index: 9;
+		}
+		nav .logo{
+			float: left;
+			height: 40px;
+			line-height: 40px;
+			color: #fff;
+			font-size: 22px;
+			border: 3px solid #FFF;
+			font-weight: 600;
+			margin:12px 0; 
+			padding: 0 5px;
+		}
+		nav .orange{
+			color:#c15d1f;
+		}
+		nav ul{
+			float: right;
+		}
+		nav li {
+			list-style-type: none;
+			float: left;
+		}
+		nav a{
+			display: block;
+			height: 70px;
+			line-height: 70px;
+			color: #fff;
+			text-align: center;
+			padding-left: 15px;
+		}
+		header{
+			
+			padding-top: 250px;
+		}
+		header .title{
+			text-align: center;
+		}
+		header .title h1{
+			font-size: 36px;
+			color:#fff;
+		}
+		header .title hr{
+			width: 270px;
+			height: 1px;
+			background-color: #fff;
+		}
+		header .title h3{
+			color: #fff;
+			font-style: italic;
+			font-size: 24px;
+		}
+		header .title a,header .right a,.welcome a,.store .col-3 a,.touch input[type="submit"]{
+			display: block;
+			width: 86px;
+			height: 25px;
+			text-align: center;
+			line-height: 25px;
+			background-color: rgba(255,255,255,.5);
+			padding: 10px 20px;
+			margin: auto;
+			margin-top: 50px;
+			border-radius: 5px;
+			transition: all 0.3s;
+		}
+		header .title a:hover{
+			background-color: #c15d1f;
+		}
+		header .menu{
+			color: #fff;
+			text-align: center;
+			margin-top: 150px;
+			margin-bottom: 150px;
+			
+		}
+		header .icon{
+			border-radius: 50%;
+			border: 1px solid #fff;
+			padding: 10px;
+			margin-bottom: 15px;
+		}
+		header .menu .col-3{
+			transition:all 0.3s;
+			padding: 15px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		header .menu .col-3:hover{
+			background-color: rgba(0,0,0,0.5);
+		}
+		.orangeblock{
+			height: 200px;
+			background-color: #c15d1f;
+			margin-top: 50px;
+		}
+		.orangeblock .left{
+			float: left;
+			font-size: 24px;
+			color:#fff;
+			line-height: 200px;
+		}
+		.orangeblock .right{
+			float: right;
+		}
+		.orangeblock .right a {
+			font-size: 14px;
+			margin-top: 77.5px;
+
+		}
+		.what{
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		.what h2{
+			color: #fff;
+			margin: 30px 0 15px 0;
+			font-size: 36px;
+		}
+		.what h4{
+			color: #fff;
+			margin: 15px 0 60px 0;
+		}
+		.what .col-3{
+			background-color: #fff;
+			padding: 10px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		.what .col-3 h5{
+			margin: 5px 0;
+			color: rgba(0,0,0,0.8); 
+			font-size: 18px;
+		}
+		.what .col-3 p {
+			font-size: 12px;
+			color: rgba(0,0,0,0.7);
+		}
+		.what .icon_what{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #9ce7f4;
+			line-height: 50px;
+			color: #c15d1f;
+			font-size: 20px;
+			margin: 15px 0;
+			transition: all 0.3s;
+		}
+		.what .col-3:hover .icon_what{
+			background-color: #c15d1f;
+			color:#fff;
+		}
+		.about{
+			background-color: #fff;
+			padding: 50px 0;
+		}
+		.about h2{
+			font-size: 36px;
+		}
+		.about .col-2:nth-of-type(2){
+			padding: 15px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.welcome{
+			padding: 50px;
+			text-align: center;
+			background-color: rgba(193,93,31,0.5);
+			color: #fff;
+		}
+		.welcome p{
+			font-size: 24px;
+			font-weight: 600;
+		}
+		.welcome a,.store .col-3 a,.touch input[type="submit"]{
+			font-size: 12px;
+			background-color: #c15d1f;
+			padding: 5px 10px;
+			color: #fff;
+		}
+		.fixed-width_600{
+			width: 600px;
+			margin: auto;
+		}
+		.team,.happy{
+			padding: 100px 0;
+			background-color: #fff;
+		}
+		.team h1,.store h1,.happy h1,.news h1,.touch h1{
+			text-align: center;
+			font-size: 30px;
+			margin-bottom: 20px;
+		}
+		.team h4,.store h4,.happy h4,.news h4,.touch h4{
+			text-align: center;
+			font-size: 20px;
+			margin-bottom: 60px;
+		}
+		.team .col-4{
+			height: 300px;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			background-size: cover;
+			position: relative;
+			overflow: hidden;
+		}
+		.team .col-4::before{
+			content: "";
+			display: block;
+			width: 95%;
+			height: 100%;
+			background-color: rgba(255,255,255,0.7);
+			z-index: 1;	
+			transform:skewX(-30deg)translateX(-200px);
+			transition: all 0.3s;
+		}
+		.team .col-4:hover::before{
+			content:"";
+			transform:skewX(-30deg)translateX(-30px);
+		}
+		.team .col-4:hover .name,
+		.team .col-4:hover .desc,
+		.team .col-4:hover .icon
+		{
+			opacity: 1;
+		}
+		.team .col-4:nth-of-type(1){
+			background-image: url(12480275513_e8183a83d7_c.jpg);
+		}
+		.team .col-4:nth-of-type(2){
+			background-image: url(8741420566_84ae49abf3_c.jpg);
+		}
+		.team .col-4:nth-of-type(3){
+			background-image: url(lipstick-woman-person.jpg);
+		}
+		.team .col-4:nth-of-type(4){
+			background-image: url(35083276646_b7b6e903bc_c.jpg);
+		}
+		.team .job{
+			position: absolute;
+			bottom: 0;
+			padding: 5px;
+			text-align: right;
+			color:#fff;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.team .col-4:nth-of-type(1) .job{
+			background-color: #F38181;
+		}
+		.team .col-4:nth-of-type(2) .job{
+			background-color: #FCE38A;
+		}
+		.team .col-4:nth-of-type(3) .job{
+			background-color: #38817A;
+		}
+		.team .col-4:nth-of-type(4) .job{
+			background-color: #95E1D3;
+		}
+		.team .name,.team .desc,.team .icon{
+			position: absolute;
+			left: 25px;
+			width: 150px;
+			top: 17%;
+			opacity: 0;
+			/*display: none;*/
+			transition:all 0.3s 0.2s;
+			z-index: 999;
+		}
+		.team .name{
+			font-size: 20px;
+			color: #333;
+		}
+		.team .desc{
+			top: 25%;
+			font-size: 14px;
+			color: #444;
+		}
+		.team .icon{
+			top: 50%;
+			
+		}
+		.team .icon span{
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background-color: #ff0000;
+			line-height: 25px;
+			text-align: center;
+			color:#fff;
+			cursor:pointer;
+		}
+		.team .col-4:nth-of-type(1) .icon span{
+			background-color: #F38181;
+		}
+		.team .col-4:nth-of-type(2) .icon span{
+			background-color: #FCE38A;
+		}
+		.team .col-4:nth-of-type(3) .icon span{
+			background-color: #38817A;
+		}
+		.team .col-4:nth-of-type(4) .icon span{
+			background-color: #95E1D3;
+		}
+		.store{
+			padding: 100px 0;
+		}
+		.store h1,.store h4,.news h1,.news h4,.touch h1,.touch h4{
+			color: #fff;
+		}
+		.store .col-3{
+			height: 400px;
+			position: relative;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position: center;
+		}
+		.store .col-3:nth-of-type(1){
+			background-image: url(cloth-1.jpg);
+		}
+		.store .col-3:nth-of-type(2){
+			background-image: url(cloth-2.jpg);
+		}
+		.store .col-3:nth-of-type(3){
+			background-image: url(cloth-3.jpg);
+		}
+		.store .col-3::before{
+			content:"";
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.75);
+			position: absolute;
+			opacity: 0;
+			transition: all 0.3s 0.3s;
+		}
+		.store .col-3:hover::before{
+			opacity: 1;
+		}
+		.store .col-3:hover a,.store .col-3:hover .price{
+			opacity: 1;
+		}
+		.store .col-3 a{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			opacity: 0;
+			transition: all 0.3s;
+		}
+		.store .col-3 .price{
+			position: absolute;
+			top: 75%;
+			text-align: center;
+			width: 100%;
+			color: #fff;
+			font-weight: 600;
+			opacity: 0;
+			transition: all 0.3s;
+
+		}
+		.store .col-3 .title{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			color: #fff;
+			background-color: rgba(0,0,0,0.9);
+			padding: 10px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.happy .col-3{
+			padding: 15px;
+			background-color: #eee;
+			box-shadow: 1px 0 5px rgba(0,0,0,0.5);
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-top: 30px;
+			position: relative;
+		}
+		.happy .col-3 img{
+			display: block;
+			width: 81px;
+			height: 81px;
+			border-radius: 50%;
+			border:2px solid #fff;
+			box-shadow: 0 0 0 2px #F40;
+			position: relative;
+			margin: auto;
+			top: -65px;
+		}
+		.happy .col-3 p{
+			position: relative;
+			top: -40px;
+			font-style: italic;
+		}
+		.happy .quote{
+			position: absolute;
+			top: 15px;
+			left: 15px;
+		}
+		.happy .quote span{
+			font-size: 28px;
+			color: #f40;
+		}
+		.happy .sign{
+			position: absolute;
+			right: 15px;
+			bottom: 15px;
+			font-size: 24px;
+			font-style: italic;
+			color: #f40;
+			/*font-weight: 600;*/
+		}
+		.news{
+			padding: 100px 0;
+
+		}
+		.news .col-4{
+			margin: 0;
+			width: 25%;
+			height: 200px;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			color: #fff;
+			text-align: center;
+			overflow: hidden;
+		}
+		.news .col-4:nth-of-type(1){
+			background-image: url(news1.jpg);
+		}
+		.news .col-4:nth-of-type(2){
+			background-image: url(news2.jpg);
+		}
+		.news .col-4:nth-of-type(3){
+			background-image: url(news3.jpg);
+		}
+		.news .col-4:nth-of-type(4){
+			background-image: url(news4.jpg);
+		}
+		.news .box{
+			position: absolute;
+			top: 164px;
+			transition:all 0.3s;
+		}
+		.news h3,.news p{
+			text-shadow: 1px 1px 5px #000;
+		}
+		.news .col-4:hover .box{
+			top: 25%;
+		}
+		.touch{
+			padding: 100px 0;
+			background-color: rgba(0,0,0,.6);
+		}
+		.touch .col-2:nth-of-type(1){
+			background-color: #fff;
+			border-radius: 5px;
+			padding: 15px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.touch h3{
+			text-align: center;
+			padding: 15px 0;
+		}
+		.touch input[type="text"],
+		.touch input[type="email"],
+		.touch input[type="number"],
+		.touch textarea{
+			width: 100%;
+			height: 30px;
+			margin: 10px 0;
+			padding: 5px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border:0;
+			border-bottom: 2px solid #ccc;
+			transition: all 0.3s;
+		}
+		.touch input[type="text"]:focus,
+		.touch input[type="email"]:focus,
+		.touch input[type="number"]:focus,
+		.touch textarea:focus{
+			outline: 0;
+			border-bottom:2px solid #F86B38;
+		}
+		.touch textarea{
+			height: 100px;
+		}
+		.touch input[type="submit"]{
+			margin: 10px auto;
+			height: initial;
+			line-height: initial;
+		}
+		.touch .col-3{
+			color: #a5a5a5;
+			text-align: center;
+		}
+		.touch .icon_touch{
+			font-size: 45px;
+			margin-bottom: 20px;
+		}
+		.touch p{
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+		.touch .map{
+			width: 100%;
+			display: inline-block;
+			height: 275px;
+		}
+		.touch .map iframe{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- nav.full-width>.fixed-width>.logo+ul>li*8>a -->
+<div class="wraper">
+	<nav class="full-width clearfix">
+		<div class="fixed-width">
+			<div class="logo">FEATURE<span class="orange">D</span></div>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Service</a></li>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Team</a></li>
+				<li><a href="">Store</a></li>
+				<li><a href="">Testimonial</a></li>
+				<li><a href="">News</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+	<header class="full-width">
+		<div class="title">
+			<h1>Beautiful WordPress Business Theme</h1>
+			<hr>
+			<h3>Cleanly Coded With User Friendly Interface</h3>
+			<a href="">Buy Now</a>
+		</div>
+		<div class="menu full-width clearfix">
+			<div class="col-3">
+				<div class="icon fa fa-star fa-2x"></div>
+				<h4>Parallax Effect</h4>
+				<p>Lorem ipsum dolor sit amet</p>
+			</div>
+			<div class="col-3">
+				<div class="icon fa fa-thumbs-up fa-2x"></div>
+				<h4>Unlimited Options</h4>
+				<p>Lorem ipsum dolor sit amet</p>
+			</div>
+			<div class="col-3">
+				<div class="icon fa fa-sign-language fa-2x"></div>
+				<h4>Responsice Design</h4>
+				<p>Lorem ipsum dolor sit amet</p>
+			</div>
+		</div>
+		<div class="orangeblock full-width">
+			<div class="fixed-width">
+				<div class="left">
+					Easy to step up, just take a few steps and your website is ready within a minute
+				</div>
+				<div class="right">
+					<a href="">Call To Action</a>
+				</div>
+			</div>
+		</div>
+		<div class="what clearfix">
+			<div class="fixed-width">
+				<h2>What We Do</h2>
+				<h4>This Is SubTitle</h4>
+				<!-- .col-3*6>.icon_what+h5+p{Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate} -->
+				<div class="col-3">
+					<div class="icon_what fa fa-medium"></div>
+					<h5>Frequently Asked Question</h5>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_what fa fa-ioxhost"></div>
+					<h5>Free Training & Courses</h5>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_what fa fa-stumbleupon"></div>
+					<h5>Clean Code</h5>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_what fa fa-hospital-o"></div>
+					<h5>Only Good In PayPal</h5>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_what fa fa-openid"></div>
+					<h5>Production Graph</h5>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_what fa fa-wheelchair-alt"></div>
+					<h5>Marketing Strategy</h5>
+					<p>Aliquam varius ligula tempor, vehicula mauris sed, efficitur dui. Aenean euismod felis quis purus varius, nec laoreet leo mollis. Curabitur eget porta velit, non convallis velit. Aenean tempor rutrum ante at vulputate</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="about clearfix">
+		<div class="fixed-width">
+			<div class="col-2">
+				<h2>About Us</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor a corporis aut nulla impedit reprehenderit eveniet consectetur quibusdam in. Doloribus sequi molestiae consequatur qui necessitatibus voluptate odio, quod laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor a corporis aut nulla impedit reprehenderit eveniet consectetur quibusdam in. Doloribus sequi molestiae consequatur qui necessitatibus voluptate odio, quod laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolor a corporis aut nulla impedit reprehenderit eveniet consectetur.</p>
+			</div>
+			<div class="col-2">
+				<img src="people-in-cafe-looking-at-city.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="welcome">
+		<div class="fixed-width_600">
+			<p>We offer unlimited column option in our sections.<br>Our support forum open for free users also.</p>
+			<a href="">WELCOME</a>
+		</div>
+	</div>
+	<div class="team clearfix">
+		<h1>Meet our Team</h1>
+		<h4>This Is Subtitle</h4>
+		<div class="fixed-width">
+			<div class="col-4">
+				<div class="name">Gabriel Labreez</div>
+				<div class="desc">Donec malesuada pellentesque eros, eu aliquam nunc scelerisque</div>
+				<div class="icon">
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-twitter"></span>
+					<span class="fa fa-instagram"></span>
+				</div>
+				<div class="job">Co-founder</div>
+			</div>
+			<div class="col-4">
+				<div class="name">Marie Stan</div>
+				<div class="desc">Donec malesuada pellentesque eros, eu aliquam nunc scelerisque</div>
+				<div class="icon">
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-twitter"></span>
+					<span class="fa fa-instagram"></span>
+				</div>
+				<div class="job">HR Manager</div>
+			</div>
+			<div class="col-4">
+				<div class="name">Maurics Blac</div>
+				<div class="desc">Donec malesuada pellentesque eros, eu aliquam nunc scelerisque</div>
+				<div class="icon">
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-twitter"></span>
+					<span class="fa fa-instagram"></span>
+				</div>
+				<div class="job">Developer</div>
+			</div>
+			<div class="col-4">
+				<div class="name">David Rasop</div>
+				<div class="desc">Donec malesuada pellentesque eros, eu aliquam nunc scelerisque</div>
+				<div class="icon">
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-twitter"></span>
+					<span class="fa fa-instagram"></span>
+				</div>
+				<div class="job">Support Manager</div>
+			</div>
+		</div>
+	</div>
+	<!-- .store>.fixed-width>h1{Woo Store}+h4{This Is Subtitle}+.col-3*3>a+.price+.title -->
+	<div class="store clearfix">
+		<div class="fixed-width">
+			<h1>Woo Store</h1>
+			<h4>This Is Subtitle</h4>
+			<div class="col-3">
+				<a href="">Add To Cart</a>
+				<div class="price">&pound;111.00</div>
+				<div class="title">Black Tirst</div>
+			</div>
+			<div class="col-3">
+				<a href="">Add To Cart</a>
+				<div class="price">&pound;324.00</div>
+				<div class="title">Black Tirst</div>
+			</div>
+			<div class="col-3">
+				<a href="">Add To Cart</a>
+				<div class="price">&pound;210.00</div>
+				<div class="title">Black Tirst</div>
+			</div>
+		</div>
+	</div>
+	<!-- .happy>.fixed-width>h1{Happy Customers}+h4{This Is Subtitle}+.col-3*3>.quote+img+p+sign -->
+	<div class="happy clearfix">
+		<div class="fixed-width">
+			<h1>Happy Customers</h1>
+			<h4>This Is Subtitle</h4>
+			<div class="col-3">
+				<div class="quote"><span class="fa fa-quote-left"></span></div>
+				<img src="carter.jpg" alt="">
+				<p>I develop lots of websites with a vaiety of themes….the support I have had from ThemeHunk has been first class. Very quick, good support and always ready to correct my css errors!. They have tweaked the theme for me and have been great. Great support guys</p>
+				<div class="sign">Vince Carter</div>
+			</div>
+			<div class="col-3">
+				<div class="quote"><span class="fa fa-quote-left"></span></div>
+				<img src="curry.jpg" alt="">
+				<p>I develop lots of websites with a vaiety of themes….the support I have had from ThemeHunk has been first class. Very quick, good support and always ready to correct my css errors!. They have tweaked the theme for me and have been great. Great support guys</p>
+				<div class="sign">Stephen Curry</div>
+			</div>
+			<div class="col-3">
+				<div class="quote"><span class="fa fa-quote-left"></span></div>
+				<img src="trump.jpg" alt="">
+				<p>I develop lots of websites with a vaiety of themes….the support I have had from ThemeHunk has been first class. Very quick, good support and always ready to correct my css errors!. They have tweaked the theme for me and have been great. Great support guys</p>
+				<div class="sign">Donald Trump</div>
+			</div>
+		</div>
+	</div>
+	<!-- .news>h1{Latest News}+h4{This is Subtitle}+.col-4*4>.box>h3+p -->
+	<div class="news clearfix">
+		<h1>Latest News</h1>
+		<h4>This is Subtitle</h4>
+		<div class="col-4">
+			<div class="box">
+				<h3>Interview Meet</h3>
+				<p>Maecenas eget orci in purus placerat volutpat sit amet id leo. Pellentesque ultricies turpis sed</p>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="box">
+				<h3>Coffee Time</h3>
+				<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper ligula.</p>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="box">
+				<h3>Business News</h3>
+				<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper ligula.</p>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="box">
+				<h3>Official Meet</h3>
+				<p>Duis eget ex non metus ornare lacinia. Nulla tempus nec erat a accumsan. In euismod at diam sit</p>
+			</div>
+		</div>
+	</div>
+	<!-- .touch>.fixed-width>h1+h4+.col-2*2 -->
+	<div class="touch clearfix">
+		<div class="fixed-width">
+			<h1>Get In Touch</h1>
+			<h4>Any question?</h4>
+			<div class="col-2">
+				<form action="">
+					<h3>Contact Us</h3>
+					<div><input type="text" placeholder="Name"></div>
+					<div><input type="email" placeholder="Email"></div>
+					<div><input type="number" placeholder="Phone"></div>
+					<div><textarea placeholder="Message"></textarea></div>
+					<input type="submit" value="送出">
+				</form>
+			</div>
+			<div class="col-2 clearfix">
+				<div class="col-3">
+					<div class="icon_touch fa fa-mobile"></div>
+					<p>+91 987654321</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_touch fa fa-home"></div>
+					<p>92 Bayport Ave. South Richmond Hill, NY 11413</p>
+				</div>
+				<div class="col-3">
+					<div class="icon_touch fa fa-envelope-o"></div>
+					<p>info@themehunk.com</p>
+				</div>
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0050378264887!2d121.56450985!3d25.0339031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q61N-iZn-WPsOWMlzEwMQ!5e0!3m2!1szh-TW!2stw!4v1514191726549" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer>.fixed-width>.top>(.col-4*4>h5+ul>li)+.bottom>.copyright+.icon_footer -->
+	<footer>
+		<div class="fixed-width">
+			<div class="top clearfix">
+				<div class="col-4">
+					<h5>IMPORTANT LINKS</h5>
+					<ul>
+						<li>Affliates</li>
+						<li>Privacy Policy</li>
+						<li>Custom work</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<h5>RECENT POSTS</h5>
+					<ul>
+						<li>Interview Meet</li>
+						<li>Business News</li>
+						<li>Coffee Timet</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<h5>TAGS</h5>
+					<ul>
+						<li>Agency</li>
+						<li>Business</li>
+						<li>Meeting</li>
+						<li>Offici</li>
+						<li>Ontime</li>
+						<li>Relax</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<h5>ABOUT</h5>
+					<ul>
+						<li>Cras egestas lectus nec tortor cursus tristique. Maecenas id lacus quis nibh sollicitudin laoreet quis eget leo.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="copyright">Business onepage theme Powered by ThemeHunk</div>
+				<div class="icon_footer">
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-twitter"></span>
+					<span class="fa fa-google-plus"></span>
+					<span class="fa fa-behance"></span>
+					<span class="fa fa-pinterest-p"></span>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+<!-- wraper-->
+</body>
+</html>
