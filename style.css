@@ -637,6 +637,9 @@
 			font-size: 36px;
 			color: #000;
 		}
+		.last {
+			height: 520px;
+		}
 		.last .col-4 {
 			padding: 0;
 			margin: 0;
