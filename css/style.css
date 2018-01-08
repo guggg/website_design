@@ -1,0 +1,847 @@
+	@media screen and (min-width: 960px){
+
+		.fixed-width{
+			width: 960px;
+			margin:auto;
+		}
+		.goTop{
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			width: 50px;
+			height: 50px;
+			background-color: #000;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		.goTop:hover{
+			background-color: #fff;
+			transition: all .3s;
+		}
+		.trangle{
+			position: relative;
+			bottom: -16px;
+			right: -12px;
+			width: 20px;
+			height: 20px;
+			border-top: solid 7px #F00;	
+			border-left: solid 7px #F00;
+			transform: rotate(45deg);
+		}
+		.ballMoving{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			animation: ball 8s infinite linear alternate;
+			position: relative;
+			background-color: #fff;
+		}
+		@keyframes ball{
+			0% {background-color: #f00; left: 0%; top: 150px;}
+			10% {background-color: #F60; left: 10% top: 150px;}
+			20% {background-color: #FD0; left: 20%; top: 150px;}
+			30% {background-color: #0F2; left: 30%; top: 150px;}
+			40% {background-color: #09F; left: 40%; top: 150px;}
+			50% {background-color: #40F; left: 50%; top: 150px;}
+			60% {background-color: #B0F; left: 60%; top: 150px;}
+			70% {background-color: #1E8; left: 70%; top: 150px;}
+			80% {background-color: #F77; left: 80%; top: 150px;}
+			90% {background-color: #FE7; left: 90%; top: 150px;}
+			100% {background-color: #7F8; left: 93%; top: 150px;}
+		}
+		body, h1, h2, h3, h4, h5, h6, ul, li, p{ /* 重置內、外距*/
+			margin: 0;
+			padding: 0;
+		}
+		.wraper{
+			animation: fade 10s infinite linear;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: button;
+			background-attachment: fixed;
+			vertical-align: bottom;
+		}
+		@keyframes fade{
+			0%{background-image: url(https://farm4.static.flickr.com/3702/11307544086_102ea6c175_c.jpg);}
+			33.3333%{background-image: url(https://visualhunt.com/photos/l/7/lights-lighting-light.jpg);}
+			66.6666%{background-image: url(https://farm6.static.flickr.com/5585/31685714606_ff61a4b5ed_c.jpg);}
+			100%{background-image: url(https://farm4.static.flickr.com/3702/11307544086_102ea6c175_c.jpg);}
+			}
+		.col-2{ /* 事先做好版面設置，包括平均放置 */
+			width: calc(50% - 30px); /*calc()讓CSS幫你計算 */
+			float: left;
+			margin: 0 15px;
+		}
+		.col-3 hr{
+			background-color: #fff;
+			width: 250px;
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+		.menu .col-3{
+			width: calc(100% / 3 - 40px);
+			float: left;
+			margin: 50px 20px;
+		}	
+		.touch .col-3{
+			width: calc(100% / 3 - 40px);
+			float: left;
+			margin: 0 20px;
+		}	
+		.submenu{
+			margin: auto;
+		}
+		.submenu .col-3{
+			width: calc(100% / 3 - 40px);
+			padding: 20px;
+			height: auto;
+			float: left;
+			margin: 0 20px;
+			box-sizing: border-box;
+		}
+		.store .col-3, .happy .col-3{
+			width: calc(100% / 3 - 50px);
+			float: left;
+			margin: 0 25px;
+			height: 440px;
+			background-position: center;
+			-webkit-background-size: cover;
+			background-size: cover;
+			position: relative;
+			padding: 0 20px;
+		}
+		.col-4{
+			width: calc(100% / 4 - 30px);
+			float: left;
+			margin: 0 15px;
+		}
+		nav .orange{
+			color: #F00;
+		}
+		nav:hover{
+			background-color: #000;
+		}
+		nav{
+			z-index: 1;
+			background-color: transparent; /* 背景變透明，便於顯示圖片*/
+			position: fixed;
+			transition: all 0.5s;
+		}
+		.nav-black{
+			background-color: #111;
+		}
+		nav .logo{
+			float: left;
+			height: 44px;
+			line-height: 44px;
+			color: #fff;
+			font-size: 32px;
+			border: 1px solid #fff;
+			margin: 12px 0;
+			margin-top: 10px;
+		}
+		nav ul{
+			float: right;
+		}
+		nav li{
+			list-style-type: none;
+			float: left;
+			font-size: 18px;
+		}
+		nav ul li a{
+			display: block;
+			height: 70px;
+			line-height: 70px;
+			text-align: center;
+			color: #fff;
+			padding-left: 32px;
+		}
+		header {
+			/*padding: 200px 0;*/
+
+		}
+		header{
+			text-align: center;
+			font-weight: bold;
+		}
+		.topTitle{
+			margin-top: 200px;
+			font-family: Alegreya;
+			font-size: 48px;
+			color: #FFF;
+			letter-spacing: 3px;
+			word-spacing: 10px;
+		}
+		header h3{
+			font-family: Sacramento;
+			font-size: 32px;
+			color: #FFF;
+			font-style: italic;
+		}
+		header hr{
+			width: 720px;
+			height: 1.5px;
+		}
+		header a{
+			font-size: 18px;
+			color: #F00;
+			display: block;
+			width: 258px;
+			height: 75px;
+			line-height: 75px;
+			text-align: center;
+			margin: auto;
+			background-color: rgba(255,255, 255, .8); /*rgba，a代表透明度 */
+			border-radius: 5px;
+			margin-top: 50px;
+			font-family: Alegreya;
+			margin-bottom: 30px;
+		}
+		header .col-3{
+			/*background-color: #000;*/
+			height: 160px;
+			transition: all 0.3s;
+			/*padding: 0 15px;*/
+			box-sizing: border-box;
+			/*border: 1px solid #000;*/
+			border-radius: 15px;
+		}
+		.fixed-width h3{
+			color: #F00;
+		}
+		header p, h4{
+			color: #fff;
+		}
+		.menu h2{
+			/*margin-top: 10px;*/
+			color: #eee;
+			font-family: Alegreya;
+			font-size: 32px;
+			font-weight: 100px;
+			margin-top: 5px;
+		}
+		.submenu p, h4{
+			color: #000;
+			font-family: Alegreya;
+		}
+		header .menu p {
+			margin: auto;
+			font-size: 16px;
+			width:300px;
+			font-family: Alegreya;
+		}
+		header h4{
+			font-size: 24px;
+		}
+		header .col-3 .icon{
+			border-radius: 50%;
+			border: 2px solid #eee;
+			padding: 6px;	
+			color: #eee;
+		}
+		header .col-3:hover{
+			background-color: rgba(255, 255, 255, .5);
+		}
+		.p1{
+			/*line-height: 60px;*/
+		}
+		header .whiteblock{
+			margin-top: 50px;
+			height: 200px;
+			background-color: #fff;
+		}
+		header .whiteblock .wbp{
+			color: #f00;
+			float: left;
+			/*line-height: 200px;*/ /*不知為什麼家line-height縮小 字會跑出去*/
+			padding-top: 75px;
+			width: 60%;
+			font-size: 22px;
+			margin-left: 50px;
+		}
+		header .whiteblock .cta{
+			font-size: 16px;
+			background-color: #CCC;
+			float: left;
+			margin-right: 100px;
+			background-color: #f00;
+			color: #fff;
+			width: 20%;
+			margin-top: 60px;
+		}
+		.wtd {
+			color: #fff;
+			font-size: 58px;
+			font-family: Shadows Into Light;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.subtitle {
+			color: #fff;
+			font-size: 38px;
+			font-family: Shadows Into Light;
+		}
+		.submenu .col-3{
+			background-color: #fff;
+			border: #fff;
+			margin-top: 50px;
+			transition: all 0.4s;
+		}
+		#gallery {
+			margin: 100px auto;
+			width: 800px;
+		}
+		#thumbs {
+			margin: 0 auto;
+		}
+		#thumbs img{
+			width: 150px;
+		}
+		.col-3 .subicon{
+			width: 60px;
+			height: 60px;
+			border-radius:50%;
+			background-color: #000;
+			line-height: 60px;
+			margin: 5px 0;
+			font-size: 30px;
+			color: #FFF;
+			transition: all 0.4s;
+		}
+		.submenu .col-3:hover .subicon{
+			background-color: #fff;
+			color: #000;
+
+		}
+		.about{
+			margin-top: 50px;
+			padding: 50px;
+			background-color: #000;
+			height: 420px;
+		}
+		.about p, h2{
+			color: #fff;
+		}
+		.about p{
+			padding-top: 60px;
+		}
+		.about h2{
+			font-size: 30px;
+		}
+		.about img{
+			height: 420px;
+		}
+		.welcome{
+			padding: 50px;
+			text-align: center;
+			background-color: rgba(255, 0 ,0 ,.5);
+			
+			/* Itim, Libre Baskerville, Bungee, Shadows Into Light, Pacifico, Roboto Mono */
+		}
+		.welcome p{
+			font-size: 32px;
+			font-family: Shadows Into Light;
+		}
+		.welcome a, .store a, .touch input[type = "submit"]{
+			color: #000;
+			font-family: Shadows Into Light;
+			background-color: rgba(255, 0 ,0 ,.5);
+			transition: all 0.3s;
+		}
+		.welcome a:hover{
+			background-color: #f00;
+		}
+		.fixed-width_600 {
+			width: 720px;
+			margin: auto;
+		}
+		.team, .happy{
+			height: 640px;
+			background-color: #000;
+			padding: 30px;
+		}
+		.happy p{
+			color: #000;
+		}
+		.team h1, .store h1, .happy h1, .last h1, .touch h1{
+			color: #fff;
+			font-size: 36px;
+			margin-bottom: 20px;
+
+		}		
+		.team h4, .store h4, .happy h4, .last h4, .touch h4{
+			color: #fff;			
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		.col-4{
+			height: 440px;
+			background-position: center;
+			-webkit-background-size: cover;
+			background-size: cover;
+			position: relative;
+		}
+		.team .col-4:nth-of-type(1){ /*記住，不要再用給定className，這樣寫就好*/
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-4就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://visualhunt.com/photos/xl/7/lipstick-woman-person.jpg);
+		}		
+		.team .col-4:nth-of-type(2){
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-4就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://farm1.staticflickr.com/79/274090449_0a7c8dea90_b.jpg);
+		}		
+		.team .col-4:nth-of-type(3){
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-4就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://farm3.static.flickr.com/2811/9345716366_4800ed57f4_c.jpg);
+		}		
+		.team .col-4:nth-of-type(4){
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-4就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://visualhunt.com/photos/l/5/life-style-lifestyles-thinking.jpg);
+		}
+		.team .job, .store .storeTitle, .happy .sign{
+			position: absolute;
+			bottom: 0;
+			padding: 5px;
+			text-align: right;
+			color: #fff;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.team .col-4:nth-of-type(1) .job{
+			background-color: #F38181;
+		}
+		.team .col-4:nth-of-type(2) .job{
+			background-color: #FCE38A;
+		}
+		.team .col-4:nth-of-type(3) .job{
+			background-color: #38817A;
+		}
+		.team .col-4:nth-of-type(4) .job{
+			background-color: #95E1D3;
+		}
+		.col-4 .name, .col-4 .desc{
+			position: absolute;
+			width: 150px;
+		}
+		.col-4 .name{
+			top:30%;
+			font-size: 20px;
+			color: #fff;
+			left: 50px;
+			opacity: 0;
+			transition: all 0.5s;
+		}
+		.col-4 .desc{
+			top:35%;
+			font-size: 16px;
+			color: #fff;
+			left: 50px;
+			opacity: 0;
+			transition: all 0.6s;
+		}
+		.col-4 .icon{
+			position: absolute;
+			top:72%;
+			text-align: center;
+			left: 75px;
+			opacity: 0;
+			transition: all 0.7s;
+		}
+		.col-4 span{
+			font-size: 18px;
+		}
+		.team .col-4{
+			overflow: hidden;
+		}
+		.team .col-4::before{ /*偽元素*/
+			content: "";
+			display: block;
+			width: 95%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			z-index: 1; /* 圖層 */	
+			transform:skewX(-30deg)translateX(-200px); /*轉動角度 跟 往旁邊一點*/
+			transition: all 0.5s;
+		}
+		.team .col-4:hover::before{
+			content:"";
+			transform:skewX(-30deg)translateX(0);
+		}
+		.team .col-4:hover .name,
+		.team .col-4:hover .desc,
+		.team .col-4:hover .icon
+		{
+			opacity: 1;
+		}
+		.col-4 .icon span{
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			color: #fff;
+			line-height: 25px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.col-4:nth-of-type(1) .icon span{
+			background-color: #F38181;
+		}
+		.col-4:nth-of-type(2) .icon span{
+			background-color: #FCE38A;
+		}
+		.col-4:nth-of-type(3) .icon span{
+			background-color:#38817A;
+		}
+		.col-4:nth-of-type(4) .icon span{
+			background-color: #95E1D3;
+		}
+		.store{
+			position: relative;
+			margin-bottom: 70px;
+		}
+		.store .col-3:nth-of-type(1){ /*記住，不要再用給定className，這樣寫就好*/
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-3就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://visualhunt.com/photos/xl/8/recording-microphone-studio.jpg);
+		}	
+		.store .col-3:nth-of-type(2){ /*記住，不要再用給定className，這樣寫就好*/
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-3就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://farm7.static.flickr.com/6121/5920893536_3565b34069_c.jpg);
+		}	
+		.store .col-3:nth-of-type(3){ /*記住，不要再用給定className，這樣寫就好*/
+			/*width: 269px; 因為我給寬度了，所以最一開始設定的col-3就會沒辦法吃，會造成沒辦法置中*/
+			background-image: url(https://visualhunt.com/photos/xl/1/dj-operating-mixing-panel.jpg);
+		}		
+		.store h1, .happy h1, .last h1, .touch h1{
+			padding: 10px;
+			margin-top: 50px;
+		}
+		.store h4, .happy h4, .last h1, .store h4{
+			margin-bottom: 50px;
+		}
+		.store .storeTitle{
+			background-color: #f00;
+			left: 0px;
+			border-radius: 15px;
+			text-align: center;
+			height: 35px;
+			line-height: 27.5px;
+			position: absolute;
+			font-size: 20px;
+			/*opacity: 0;*/
+			transition: all 0.7s;
+		}
+		.store .price{
+			color: #fff;
+			position: absolute;
+			top: 300px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			opacity: 0;
+			transition: all 0.7s;
+		}
+		.store a{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			opacity: 0;
+			transition: all 0.1s;
+			background-color: #f00;
+		}
+		.store .col-3::before{ /*偽元素*/
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			/*z-index: 1;  圖層 */	
+			transition: all .6s;
+			opacity: 0;
+			border-radius: 15px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.store .col-3:hover::before{
+			opacity: 1;
+		}
+		.store .col-3:hover .price,
+		.store .col-3:hover a,
+		.store .col-3:hover .storeTitle
+		{
+			opacity: 1;
+		}
+		.happy .col-3{
+			padding: 15px;
+			background-color: #eee;
+			box-shadow: 1px 0 30px rgba(255,255,255,1);
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			height: 250px;
+			margin-top: 50px;
+		}
+		.happy .col-3{
+			text-align: center;
+		}
+		.happy .col-3:nth-of-type(1) img{
+			background-image: url(https://pbs.twimg.com/profile_images/929030268043845633/ilS1ri2v.jpg);
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position: center;
+		}
+		.happy .col-3:nth-of-type(2) img{
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStTs6GcU9MVBMugu3OP51KxdeeArA3vMTVHi5cV7c-9AlKz0Y);
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position: 0px 125px;
+		}
+		.happy .col-3:nth-of-type(3) img{
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUycGHiDRmgUPb0IyRsm8dXN27RynmgpjnDlKKAepLe1cqCtt);
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position: center;
+		}
+		.happy .col-3 img{
+			display: block;
+			width: 81px;
+			height: 81px;
+			border-radius: 50%;
+			border:2px solid #fff;
+			box-shadow: 0 0 0 1px #fff;
+			display: inline-block;
+			position: relative;
+			top: -60px;
+		}
+		.happy p{
+			position: relative;
+			top: -35px;
+		}
+		.happy .sign{
+			color: #ff0000ff;
+			position: absolute;
+			left: -10px;
+			font-size: 24px;
+			font-family: Pacifico;
+		}
+		.happy .quote{
+			position: absolute;
+			top: 10px;
+			left: 20px;
+			font-size: 36px;
+			color: #000;
+		}
+		.last {
+			height: 520px;
+		}
+		.last .col-4 {
+			padding: 0;
+			margin: 0;
+			width: 25%;
+			height: 250px;
+			margin-top: 50px;
+			position: relative;
+			overflow: hidden;
+		}
+		.last .col-4:nth-of-type(1){
+			background-image: url(https://visualhunt.com/photos/l/5/mural-holy-painting-art-religion-church-artwork.jpg);
+		}
+		.last .col-4:nth-of-type(2){
+			background-image: url(https://visualhunt.com/photos/l/1/american-flag-in-frame-on-wall.jpg);
+		}
+		.last .col-4:nth-of-type(3){
+			background-image: url(https://visualhunt.com/photos/l/9/blackwoman-xpro2-stedelijkmuseum.jpg);
+		}
+		.last .col-4:nth-of-type(4){
+			background-image: url(https://visualhunt.com/photos/l/8/artwork-art-arms.jpg);
+		}
+		.last .col-4:nth-of-type(5){
+			background-image: url(https://visualhunt.com/photos/l/6/concert-scene-dj-music-rap-hip-hop-scenequipmente.jpg);
+		}
+		.last .col-4:nth-of-type(6){
+			background-image: url(https://farm4.static.flickr.com/3723/8936939860_33d3f3f9bb_c.jpg);
+		}		
+		.last .col-4:nth-of-type(7){
+			background-image: url(https://visualhunt.com/photos/xl/1/people-at-rock-concert-with-heartshape-hand-gesture.jpg);
+		}		
+		.last .col-4:nth-of-type(8){
+			background-image: url(https://farm6.static.flickr.com/5022/5576617677_ed09f96fe5_c.jpg);
+		}
+		.last h5{
+			font-size: 26px;
+		}
+		.last p{
+			font-size: 16px;
+		}
+		.last .box{
+			position: absolute;
+			top: 218px;
+			transition: all 0.5s;
+		}
+		.last h5,.last p{
+			text-shadow: 1px 1px 5px #000;
+			color: #fff;
+		}
+		.last .col-4::after{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			display: block;
+			width: 100%;
+			height: 70%;
+			background-color: rgba(0,0,0,.1);
+			transform: skewX(0)translateY(170px);
+			transition: all 0.5s;
+		}
+		.last .col-4:hover .box{
+			top: 80px;
+		}
+		.last .col-4:hover::after{
+			top: 80px;
+			transform: skewX(0)translateY(0);
+		}
+		.touch {
+			background-color: rgba(0,0,0,.6);
+			height: 980px;
+		}
+		.touch .col-2:nth-of-type(1){
+			background-color: #fff;
+			border-radius: 10px;
+			padding: 15px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			color: #000;
+			height: 550px;
+		}
+		.touch h3{
+			color: #000;
+			padding: 10px;
+		}
+		.touch input[type = "text"], /*屬性選取，因為不想用到submit的屬性*/
+		.touch input[type = "email"],
+		.touch input[type = "number"],
+		.touch textarea{
+			width: 100%;
+			height: 40px;
+			margin: 5px 0;
+			padding: 5px; /*讓字不要靠這麼近 */
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border: 0;
+			border-bottom: 2px solid #FF0000FF;
+		}
+		.touch input[type = "text"]:focus, /**/
+		.touch input[type = "email"]:focus,
+		.touch input[type = "number"]:focus,
+		.touch textarea:focus{
+			outline: 0; /* 就算沒有border，選取的時候還是會有線，這個就是把線弄掉 */
+		}
+		.touch textarea{
+			height: 200px;
+		}
+		.touch h1{
+			padding-top: 80px;
+			font-size: 50px;
+		}
+		.touch h4{
+			padding-bottom: 100px;
+		}
+		.lastIcon{
+			font-size: 50px;
+			color: rgba(255,255,255, .6);
+			margin-bottom: 20px;
+			margin-top: 0;
+		}
+		.lastInfo{
+			color:  rgba(255,255,255, .6);
+			font-family: Roboto Mono;
+		}
+		.map{
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			height: 390px;
+		}
+		.touch input[type = "submit"]{
+			width: 200px;
+			height: 70px;
+			background-color: rgba(255,0 ,0 ,.8);
+			margin: 14px;
+			border: 0;
+			outline: 0;
+			border-radius: 15px;
+			font-size: 26px;
+			font-weight: bold;
+		}
+		.prefooter{
+			background-color: #000;
+			height: 150px;
+		}
+		.prefooter h2{
+			text-align: left;
+			font-family: Alegreya;
+			padding-top: 50px;
+			font-size: 20px;
+			border-bottom: solid #f00 3px;
+			padding-bottom: 9px;
+			margin-bottom: 30px;
+		}
+		.prefooter a{
+			background-color: transparent;
+			font-family: Alegreya;
+			font-size: 16px;
+			height: 10px;
+			padding: 8px;
+			text-align: left;
+			margin: 0 0px;
+			color: #fff;
+			width: auto;
+			line-height: 10px;
+		}
+		.prefooter p, div{
+			/*text-align: left;*/
+			color: #fff;
+		}
+		.prefooter .tag, .tag2{
+			float: left;
+			background-color: #f00;
+			color: #000;
+			margin: 5px;
+			width: auto;
+			height: 30px;
+			border-radius: 5px;
+			line-height: 30px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 5px;
+			text-align: left;
+		}
+		.prefooter .tagName{
+			margin-bottom: 300px;
+		}
+		.prefooter p{
+			font-family: Alegreya;
+			font-size: 16px;
+			text-align: left;
+			width: 250px;
+		}
+		.prefooter .col-4{
+			height: 250px;
+		}
+		.bottom{
+			background-color: #000;
+			/*height: 150px;*/
+		}
+	}

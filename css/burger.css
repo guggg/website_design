@@ -1,0 +1,52 @@
+.hamburger, .hamburger-x{
+	width: 60px;
+	height: 60px;
+	position: relative;
+	background-color: #FF0000;
+}
+.hamburger span, .hamburger-x span{
+	display: block;
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all .2s;
+}
+.hamburger span::before, .hamburger span::after,
+.hamburger-x span::before, .hamburger-x span::after{
+	content: "";
+	display: block;
+	width: 30px;
+	height: 5px;
+	position: absolute;
+	background-color: #fff;
+	transition: all .2s;
+}
+.hamburger span::before{
+	top: -10px;
+	transition: top .2s, transform 0.3s 0.3s;
+}
+.hamburger span::after{
+	bottom: -10px;
+	transition: bottom .2s, transform 0.3s 0.3s;
+}
+.hamburger-x span{
+	background-color: transparent;
+}
+.hamburger-x span::before{
+	content: "";
+	transform: rotate(45deg);
+	top: 0;
+	transition: top .2s, transform 0.3s 0.3s;
+}
+.hamburger-x span::after{
+	content: "";
+	transform: rotate(-45deg);
+	bottom: 0;
+	transition: bottom .2s, transform 0.3s 0.3s;
+}

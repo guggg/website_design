@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 
 <!-- 會先寫一些需要重置設定或是設定大小，前幾個 -->
-
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>website imitate</title>
-	 <link type="text/css" rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Bungee|Itim|Libre+Baskerville|Pacifico|Roboto+Mono|Shadows+Into+Light" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/reset.css">
+	<link type="text/css" rel="stylesheet" href="css/mobile.css">
+	<link type="text/css" rel="stylesheet" href="css/tablet.css">
+	<link type="text/css" rel="stylesheet" href="css/slick.css">
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css">
+	<!-- <link type="text/css" rel="stylesheet" href="css/burger.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Itim|Libre+Baskerville|Pacifico|Roboto+Mono|Shadows+Into+Light|Sacramento" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 	<!-- Itim, Libre Baskerville, Bungee, Shadows Into Light, Pacifico, Roboto Mono -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/slick.min.js"></script>
 </head>
 <body>
 	<div class="wraper">
-<!-- 		<div class = "slideContainer">
-			<img src="https://farm4.static.flickr.com/3702/11307544086_102ea6c175_c.jpg" alt="pure css3 slider" />
+		<div class="goTop">
+			<div class="trangle"></div>
 		</div>
-		<div class = "slideContainer">
-			<img src="https://farm3.static.flickr.com/2939/14666597582_8951714f7a_c.jpg" alt="pure css3 slider" />
-		</div>
-		<div class = "slideContainer">
-			<img src="https://farm9.static.flickr.com/8549/8946914610_3de1621d00_c.jpg" alt="pure css3 slider" />
-		</div>-->
 		<nav class="full-width clearfix">
 			<div class="fixed-width"> <!-- nav置中 -->
 				<div class="logo">Feature<span class="orange">D</span></div>
 				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Services</a></li>
-					<li><a href="">About Us</a></li>
-					<li><a href="">Team</a></li>
-					<li><a href="">Store</a></li>
-					<li><a href="">Testimonial</a></li>
-					<li><a href="">News</a></li>
-					<li><a href="">Contact Us</a></li>
+					<li class = "home"><a href="#">Home</a></li>
+					<li><a href="#" data-target = "wtd">Services</a></li>
+					<li><a href="#" data-target = "about">About Us</a></li>
+					<li><a href="#" data-target = "team">Team</a></li>
+					<li><a href="#" data-target = "store">Store</a></li>
+					<li><a href="#" data-target = "happy">Testimonial</a></li>
+					<li><a href="#" data-target = "last">News</a></li>
+					<li><a href="#" data-target = "touch">Contact Us</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -65,8 +67,10 @@
 				</div>
 			</div>
 			<div class="whiteblock full-width">
-				<p class="wbp">Easy to step up, just take a few steps and your website is ready within a minute</p>
-				<a href="" class="cta">Call to action</a>
+				<div class="full-width">
+					<p class="col-2 wbp">Easy to step up, just take a few steps and your website is ready within a minute</p>
+					<a href="" class="col-2 cta">Call to action</a>
+				</div>
 			</div>
 			<div class="fixed-width">
 				<div class="submenu clearfix">
@@ -116,7 +120,7 @@
 			</div>
 		</div>
 		<div class="welcome">
-			<div class="fixed-width_600">
+			<div class="fixed-width">
 				<p>We offer unlimited column option in our sections. Our support forum open for free users also.</p>
 				<a href="">Welcome!</a>
 			</div>
@@ -124,7 +128,7 @@
 		<div class="team clearfix">
 			<h1>Meet our Team</h1>
 			<h4>Here comes amazing PEOPLE</h4>
-			<div class="teamImg fixed-width-2">			
+			<div class="teamImg full-width">			
 				<div class="col-4 ">
 					<div class="name">Gabriel Labreez</div>
 					<div class="desc">Donec malesuada pellentesque eros, eu aliquam nunc scelerisqueDonec malesuada pellentesque eros, eu aliquam nunc scelerisque</div>
@@ -168,7 +172,7 @@
 			</div>
 		</div>
 		<div class="store">
-			<div class="fixed-width_1240 clearfix">
+			<div class="fixed-width clearfix">
 				<h1>Woo Store</h1>
 				<h4>Amazing thing</h4>
 				<div class="col-3">
@@ -189,7 +193,7 @@
 			</div>
 		</div>
 		<div class="happy">
-			<div class="fixed-width_1240">
+			<div class="full-width">
 				<h1>Happy Customers</h1>
 				<h4>There are some comments from our customers</h4>
 				<div class="col-3">
@@ -216,34 +220,60 @@
 			<div class="full-width">
 				<h1>Lastest News</h1>
 				<h4>And One Last Thing...</h4>
-				<div class="col-4">
-					<div class="box">
-						<h5>Jesus' Love</h5>
-						<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+				<div class="last-col">
+					<div class="col-4">
+						<div class="box">
+							<h5>Jesus' Love</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-4">
-					<div class="box">
-						<h5>USA Peace</h5>
-						<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+					<div class="col-4">
+						<div class="box">
+							<h5>USA Peace</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-4">
-					<div class="box">
-						<h5>That Woman</h5>
-						<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+					<div class="col-4">
+						<div class="box">
+							<h5>That Woman</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-4">
-					<div class="box">
-						<h5>That guy</h5>
-						<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+					<div class="col-4">
+						<div class="box">
+							<h5>That Guy</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="box">
+							<h5>Concert</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="box">
+							<h5>Wind Man</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="box">
+							<h5>Many hands</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="box">
+							<h5>Lil Wayne</h5>
+							<p>Cras gravida suscipit sapien sed auctor. Mauris in luctus ante. Suspendisse non ullamcorper.</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="touch full-width">
-			<div class="fixed-width_1240">
+			<div class="fixed-width">
 				<h1>Get In Touch</h1>
 				<h4>Any question?</h4>
 				<div class="col-2 clearfix">
@@ -273,52 +303,53 @@
 				</div>
 			</div>
 		</div>
-		<div class="prefooter clearfix">
-					<div class="full-width clearfix">
-						<div class="col-4">
-							<h2>IMPORTANT LINKS</h2>
-							<a href="">Affliates</a>
-							<a href="">Privacy Policy</a>
-							<a href="">Custom work</a>
-						</div>
-						<div class="col-4">
-							<h2>RECENT POSTS</h2>
-							<a href="">Interview Meet</a>
-							<a href="">Business News</a>
-							<a href="">Coffee Time</a>
-						</div>
-						<div class="col-4 clearfix">
-							<div class="tagName">
-								<h2>TAGS</h2>
-								<div>
-									<div class = "tag">Agency</div>
-									<div class = "tag">Business</div>
-									<div class = "tag">Meeting</div>
-								</div>
-								<div>
-									<div class = "tag2">Official</div>
-									<div class = "tag2">Ontime</div>
-									<div class = "tag2">Relax</div>
+		<footer>
+			<div class="prefooter clearfix">
+						<div class="full-width clearfix">
+							<div class="col-4">
+								<h2>IMPORTANT LINKS</h2>
+								<a href="">Affliates</a>
+								<a href="">Privacy Policy</a>
+								<a href="">Custom work</a>
+							</div>
+							<div class="col-4">
+								<h2>RECENT POSTS</h2>
+								<a href="">Interview Meet</a>
+								<a href="">Business News</a>
+								<a href="">Coffee Time</a>
+							</div>
+							<div class="col-4">
+								<div class="tagName">
+									<h2>TAGS</h2>
+									<div>
+										<div class = "tag">Agency</div>
+										<div class = "tag">Business</div>
+										<div class = "tag">Meeting</div>
+									</div>
+									<div>
+										<div class = "tag2">Official</div>
+										<div class = "tag2">Ontime</div>
+										<div class = "tag2">Relax</div>
+									</div>
 								</div>
 							</div>
+							<div class="col-4">
+								<h2>ABOUT</h2>
+								<p>Cras egestas lectus nec tortor cursus tristique. Maecenas id lacus quis nibh sollicitudin laoreet quis eget leo.</p>
+							</div>
 						</div>
-						<div class="col-4">
-							<h2>ABOUT</h2>
-							<p>Cras egestas lectus nec tortor cursus tristique. Maecenas id lacus quis nibh sollicitudin laoreet quis eget leo.</p>
-						</div>
-					</div>
-			</div>
-			<div class="bottom">
-				<div class="copyright">Business onepage theme Powered by ThemeHunk</div>
-				<div class="icon_footer">
-					<span class="fa fa-facebook"></span>
-					<span class="fa fa-twitter"></span>
-					<span class="fa fa-google-plus"></span>
-					<span class="fa fa-behance"></span>
-					<span class="fa fa-pinterest-p"></span>
 				</div>
-			</div>
-
+				<div class="bottom clearfix">
+					<div class="copyright">Business onepage theme Powered by ThemeHunk</div>
+					<div class="icon_footer">
+						<span class="fa fa-facebook"></span>
+						<span class="fa fa-twitter"></span>
+						<span class="fa fa-google-plus"></span>
+						<span class="fa fa-behance"></span>
+						<span class="fa fa-pinterest-p"></span>
+					</div>
+				</div>
+			</footer>
 <!-- 		<div id="gallery">
 			<img src="https://images.unsplash.com/photo-1510680865842-cbda31c2ef99?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=800&fit=crop&s=8bbf79b6d58b8257316278d1d3276022" alt="" id="">
 		</div>

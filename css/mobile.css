@@ -1,5 +1,31 @@
-		*{
-			font-family: Itim;
+		@media screen and (max-width: 650px){
+			.fixed-width{
+				width: 90%; /*設定裝置大小的90%*/
+				margin:auto;
+			}
+		.goTop{
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			width: 50px;
+			height: 50px;
+			background-color: #000;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		.goTop:hover{
+			background-color: #fff;
+			transition: all .3s;
+		}
+		.trangle{
+			position: relative;
+			bottom: -16px;
+			right: -12px;
+			width: 20px;
+			height: 20px;
+			border-top: solid 7px #F00;	
+			border-left: solid 7px #F00;
+			transform: rotate(45deg);
 		}
 		.ballMoving{
 			width: 100px;
@@ -10,92 +36,55 @@
 			background-color: #fff;
 		}
 		@keyframes ball{
-			0% {background-color: #f00; left: 10px; top: 150px;}
-			10% {background-color: #F60; left: 190px; top: 150px;}
-			20% {background-color: #FD0; left: 330px; top: 150px;}
-			30% {background-color: #0F2; left: 470px; top: 150px;}
-			40% {background-color: #09F; left: 610px; top: 150px;}
-			50% {background-color: #40F; left: 750px; top: 150px;}
-			60% {background-color: #B0F; left: 890px; top: 150px;}
-			70% {background-color: #1E8; left: 1030px; top: 150px;}
-			80% {background-color: #F77; left: 1170px; top: 150px;}
-			90% {background-color: #FE7; left: 1310px; top: 150px;}
-			100% {background-color: #7F8; left: 1500px; top: 150px;}
+			0% {background-color: #f00; left: 0%; top: 150px;}
+			10% {background-color: #F60; left: 8% top: 150px;}
+			20% {background-color: #FD0; left: 16%; top: 150px;}
+			30% {background-color: #0F2; left: 24%; top: 150px;}
+			40% {background-color: #09F; left: 32%; top: 150px;}
+			50% {background-color: #40F; left: 40%; top: 150px;}
+			60% {background-color: #B0F; left: 48%; top: 150px;}
+			70% {background-color: #1E8; left: 56%; top: 150px;}
+			80% {background-color: #F77; left: 64%; top: 150px;}
+			90% {background-color: #FE7; left: 72%; top: 150px;}
+			100% {background-color: #7F8; left: 80%; top: 150px;}
 		}
 		body, h1, h2, h3, h4, h5, h6, ul, li, p{ /* 重置內、外距*/
 			margin: 0;
 			padding: 0;
 		}
-		.clearfix::after{ /* clearfix 清除浮動 */
-			content: "";
-			display: block;
-			clear: both;
-		}
-		a {
-			text-decoration: none;
-			color: #000;
-		}
-		img{
-			width: 100%;
-		}
-		.fixed-width{ /* 將想要的版面設定大小及位置 */
-			width: 960px;
-			margin: auto;
-		}
-		.fixed-width_1240{ /* 將想要的版面設定大小及位置 */
-			width: 1240px;
-			margin: auto;
-		}
-		.fixed-width-2{ /* 將想要的版面設定大小及位置 */
-			width: 1200px;
-			margin: auto;
-		}
-		.full-width{
-			width: 100%;
-		}
 		.wraper{
+			animation: fade 10s infinite linear;
 			width: 100%;
 			height: 100%;
-			background-image: url(https://farm4.static.flickr.com/3702/11307544086_102ea6c175_c.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
-			background-position: button;
+			background-position: center;
 			background-attachment: fixed;
 		}
-/*		.slideContainer{
-			position: fixed;
-		    left: 0;
-		    top: 0;
-		    right: 0;
-		    bottom: 0;
-		    z-index: -1;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    opacity: 0;
-		    filter: alpha(opacity=0);
-		}*/
+		@keyframes fade{
+			0%{background-image: url(https://farm4.static.flickr.com/3702/11307544086_102ea6c175_c.jpg);}
+			33.3333%{background-image: url(https://visualhunt.com/photos/l/7/lights-lighting-light.jpg);}
+			66.6666%{background-image: url(https://farm6.static.flickr.com/5585/31685714606_ff61a4b5ed_c.jpg);}
+			100%{background-image: url(https://farm4.static.flickr.com/3702/11307544086_102ea6c175_c.jpg);}
+			}
 		.col-2{ /* 事先做好版面設置，包括平均放置 */
-			width: calc(50% - 30px); /*calc()讓CSS幫你計算 */
+			width: calc(100% - 30px); /*calc()讓CSS幫你計算 */
 			float: left;
 			margin: 0 15px;
-/* 			padding: 0 40px;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box; */
 		}
 		.col-3 hr{
 			background-color: #fff;
 			width: 250px;
 			margin: 0 auto;
+			margin-top: 10px;
 		}
 		.menu .col-3{
-			width: calc(100% / 3 - 40px);
+			width: calc(100% - 40px);
 			float: left;
 			margin: 50px 20px;
 		}	
 		.touch .col-3{
-			width: calc(100% / 3 - 40px);
+			width: calc(100% - 40px);
 			float: left;
 			margin: 0 20px;
 		}	
@@ -103,17 +92,17 @@
 			margin: auto;
 		}
 		.submenu .col-3{
+			width: calc(100% - 40px);
 			padding: 20px;
 			height: auto;
-			width: 280px;
 			float: left;
 			margin: 0 20px;
 			box-sizing: border-box;
 		}
 		.store .col-3, .happy .col-3{
-			width: calc(100% / 3 - 50px);
+			width: calc(100% - 50px);
 			float: left;
-			margin: 0 25px;
+			margin: 20px 25px;
 			height: 440px;
 			background-position: center;
 			-webkit-background-size: cover;
@@ -122,7 +111,7 @@
 			padding: 0 20px;
 		}
 		.col-4{
-			width: calc(100% / 4 - 30px);
+			width: calc(100% / 2 - 30px);
 			float: left;
 			margin: 0 15px;
 		}
@@ -136,7 +125,10 @@
 			z-index: 1;
 			background-color: transparent; /* 背景變透明，便於顯示圖片*/
 			position: fixed;
-			transition: all 0.3s;
+			transition: all 0.5s;
+		}
+		.nav-black{
+			background-color: #111;
 		}
 		nav .logo{
 			float: left;
@@ -149,12 +141,13 @@
 			margin-top: 10px;
 		}
 		nav ul{
-			float: right;
+			/*float: right;*/
 		}
 		nav li{
 			list-style-type: none;
-			float: left;
+			/*float: left;*/
 			font-size: 18px;
+			display: none;
 		}
 		nav ul li a{
 			display: block;
@@ -165,8 +158,7 @@
 			padding-left: 32px;
 		}
 		header {
-
-			padding: 200px 0;
+			/*padding: 200px 0;*/
 
 		}
 		header{
@@ -174,24 +166,25 @@
 			font-weight: bold;
 		}
 		.topTitle{
-			font-family: Roboto Mono;
-			font-size: 48px;
+			margin-top: 200px;
+			font-family: Alegreya;
+			font-size: 36px;
 			color: #FFF;
+			letter-spacing: 3px;
+			word-spacing: 10px;
 		}
 		header h3{
-			font-family: Roboto Mono;
-			font-size: 32px;
+			font-family: Sacramento;
+			font-size: 28px;
 			color: #FFF;
 			font-style: italic;
 		}
 		header hr{
-			width: 720px;
+			width: auto;
 			height: 1.5px;
-			background-color: #F00;
 		}
 		header a{
-			font-size: 36px;
-			font-style: bold;
+			font-size: 18px;
 			color: #F00;
 			display: block;
 			width: 258px;
@@ -202,7 +195,7 @@
 			background-color: rgba(255,255, 255, .8); /*rgba，a代表透明度 */
 			border-radius: 5px;
 			margin-top: 50px;
-			font-family: Bungee;
+			font-family: Alegreya;
 			margin-bottom: 30px;
 		}
 		header .col-3{
@@ -218,32 +211,34 @@
 			color: #F00;
 		}
 		header p, h4{
-			color: #000;
+			color: #fff;
 		}
 		.menu h2{
 			/*margin-top: 10px;*/
-			color: #f00;
+			color: #eee;
 			font-family: Alegreya;
 			font-size: 32px;
 			font-weight: 100px;
+			margin-top: 5px;
 		}
 		.submenu p, h4{
 			color: #000;
 			font-family: Alegreya;
 		}
 		header .menu p {
-			width :400px;
 			margin: auto;
-			font-size: 20px;
+			font-size: 16px;
+			width:300px;
+			font-family: Alegreya;
 		}
 		header h4{
 			font-size: 24px;
 		}
 		header .col-3 .icon{
 			border-radius: 50%;
-			border: 2px solid #000;
+			border: 2px solid #eee;
 			padding: 6px;	
-			color: #000;
+			color: #eee;
 		}
 		header .col-3:hover{
 			background-color: rgba(255, 255, 255, .5);
@@ -255,29 +250,35 @@
 			margin-top: 50px;
 			height: 200px;
 			background-color: #fff;
+			position: relative;
 		}
 		header .whiteblock .wbp{
 			color: #f00;
-			float: left;
-			line-height: 200px;
-			width: 60%;
-			font-size: 22px;
-			margin-left: 50px;
+			/*float: left;*/
+			/*line-height: 200px;*/ /*不知為什麼家line-height縮小 字會跑出去*/
+			padding-top: 35px;
+			/*width: 60%;*/
+			font-size: 1.1em;
+			/*margin-left: 50px;*/
 		}
 		header .whiteblock .cta{
-			font-size: 16px;
-			background-color: #CCC;
-			float: right;
-			margin-right: 100px;
 			background-color: #f00;
+			font-size:14px;
 			color: #fff;
-			width: 20%;
-			margin-top: 60px;
+			width: 30%;
+			position: absolute;
+			top:120px;
+			left:28%;
+			height: 40px;
+			line-height: 40px;
 		}
 		.wtd {
 			color: #fff;
 			font-size: 58px;
 			font-family: Shadows Into Light;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 		}
 		.subtitle {
 			color: #fff;
@@ -320,19 +321,25 @@
 			margin-top: 50px;
 			padding: 50px;
 			background-color: #000;
-			height: 420px;
+			height: 960px;
+
+		}
+		.about .col-2{
+			height: 100%;
 		}
 		.about p, h2{
 			color: #fff;
 		}
 		.about p{
 			padding-top: 60px;
+			font-size: 14px;
 		}
 		.about h2{
 			font-size: 30px;
 		}
 		.about img{
-			height: 420px;
+			height: 320px;
+			margin-top: 50px;
 		}
 		.welcome{
 			padding: 50px;
@@ -355,13 +362,18 @@
 			background-color: #f00;
 		}
 		.fixed-width_600 {
-			width: 720px;
+			/*width: 720px;*/
 			margin: auto;
 		}
+		.happy{
+			height: 1260px;
+		}
 		.team, .happy{
-			height: 640px;
 			background-color: #000;
 			padding: 30px;
+		}
+		.happy p{
+			color: #000;
 		}
 		.team h1, .store h1, .happy h1, .last h1, .touch h1{
 			color: #fff;
@@ -375,7 +387,7 @@
 			margin-bottom: 20px;
 		}
 		.col-4{
-			height: 440px;
+			height: 360px;
 			background-position: center;
 			-webkit-background-size: cover;
 			background-size: cover;
@@ -425,18 +437,18 @@
 			width: 150px;
 		}
 		.col-4 .name{
-			top:30%;
-			font-size: 20px;
+			top:19%;
+			font-size: 16px;
 			color: #fff;
-			left: 50px;
+			left: 18px;
 			opacity: 0;
 			transition: all 0.5s;
 		}
 		.col-4 .desc{
-			top:35%;
-			font-size: 16px;
+			top:28%;
+			font-size: 12px;
 			color: #fff;
-			left: 50px;
+			left: 10px;
 			opacity: 0;
 			transition: all 0.6s;
 		}
@@ -451,8 +463,12 @@
 		.col-4 span{
 			font-size: 18px;
 		}
+		.team{
+			height: 925px;
+		}
 		.team .col-4{
 			overflow: hidden;
+			margin-top: 15px;
 		}
 		.team .col-4::before{ /*偽元素*/
 			content: "";
@@ -515,7 +531,6 @@
 		.store h1, .happy h1, .last h1, .touch h1{
 			padding: 10px;
 			margin-top: 50px;
-			font-size: ;
 		}
 		.store h4, .happy h4, .last h1, .store h4{
 			margin-bottom: 50px;
@@ -661,6 +676,18 @@
 		.last .col-4:nth-of-type(4){
 			background-image: url(https://visualhunt.com/photos/l/8/artwork-art-arms.jpg);
 		}
+		.last .col-4:nth-of-type(5){
+			background-image: url(https://visualhunt.com/photos/l/6/concert-scene-dj-music-rap-hip-hop-scenequipmente.jpg);
+		}
+		.last .col-4:nth-of-type(6){
+			background-image: url(https://farm4.static.flickr.com/3723/8936939860_33d3f3f9bb_c.jpg);
+		}		
+		.last .col-4:nth-of-type(7){
+			background-image: url(https://visualhunt.com/photos/xl/1/people-at-rock-concert-with-heartshape-hand-gesture.jpg);
+		}		
+		.last .col-4:nth-of-type(8){
+			background-image: url(https://farm6.static.flickr.com/5022/5576617677_ed09f96fe5_c.jpg);
+		}
 		.last h5{
 			font-size: 26px;
 		}
@@ -696,7 +723,7 @@
 		}
 		.touch {
 			background-color: rgba(0,0,0,.6);
-			height: 980px;
+			height: 1840px;
 		}
 		.touch .col-2:nth-of-type(1){
 			background-color: #fff;
@@ -707,6 +734,7 @@
 			box-sizing: border-box;
 			color: #000;
 			height: 550px;
+			margin-bottom: 80px;
 		}
 		.touch h3{
 			color: #000;
@@ -772,53 +800,65 @@
 		}
 		.prefooter{
 			background-color: #000;
-			height: 250px;
+			height: 150px;
 		}
 		.prefooter h2{
 			text-align: left;
 			font-family: Alegreya;
 			padding-top: 50px;
-			font-size: 20px;
-			margin: 0 50px;
+			font-size: 16px;
+			/*margin: 0 50px;*/
 			border-bottom: solid #f00 3px;
 			padding-bottom: 9px;
+			margin-bottom: 30px;
 		}
 		.prefooter a{
 			background-color: transparent;
 			font-family: Alegreya;
-			font-size: 16px;
+			font-size: 14px;
 			height: 10px;
-			margin: 0;
-			padding: 8px;
 			text-align: left;
-			margin: 0 50px;
 			color: #fff;
+			width: auto;
+			line-height: 10px;
+			margin-top: 0;
 		}
 		.prefooter p, div{
+			/*text-align: left;*/
 			color: #fff;
-		}
-		.prefooter .tagName{
 		}
 		.prefooter .tag, .tag2{
 			float: left;
 			background-color: #f00;
 			color: #000;
-			margin: 5px;
+			margin-top: 5px;
+			margin-right: 2px;
 			width: auto;
-			height: 30px;
+			height: 20px;
 			border-radius: 5px;
-			line-height: 30px;
+			line-height: 16px;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
+			padding: 2px;
+			font-family: Alegreya;
+			font-size: 14px;
+		}
+		.prefooter .tagName{
+			margin-bottom: 300px;
 		}
 		.prefooter p{
 			font-family: Alegreya;
-			font-size: 16px;
+			font-size: 13px;
 			margin: auto;
 			text-align: left;
-			width: 170px;
+			width: 215px;
+		}
+		.prefooter .col-4{
+			height: 250px;
 		}
 		.bottom{
 			background-color: #000;
+			/*height: 150px;*/
 		}
+	}
