@@ -12,6 +12,7 @@
 			background-color: #000;
 			border-radius: 50%;
 			cursor: pointer;
+			z-index: 999;
 		}
 		.goTop:hover{
 			background-color: #fff;
@@ -146,8 +147,8 @@
 		nav li{
 			list-style-type: none;
 			/*float: left;*/
-			font-size: 18px;
-			display: none;
+			/*font-size: 18px;*/
+			/*display: none;*/
 		}
 		nav ul li a{
 			display: block;
@@ -323,9 +324,6 @@
 			background-color: #000;
 			height: 960px;
 
-		}
-		.about .col-2{
-			height: 100%;
 		}
 		.about p, h2{
 			color: #fff;

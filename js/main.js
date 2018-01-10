@@ -7,6 +7,7 @@ $(function(){
 			scrollTop:_offset,
 		})
 		return false;
+		$("nav ul").hide();
 	})
 	$(".goTop, .home").click(function(){
 		$("html, body").animate({
@@ -63,4 +64,19 @@ $(function(){
 		    // instead of a settings object
 		  ]
 		});
+
+	$(".hamburger").click(function(){
+		$(this).toggleClass("hamburger-x");
+		$(this).next().slideToggle();
+	})
+	$(window).resize(function(){
+		let w = $(window).width();
+		if(w > 885){
+			$(".hamburger").next().show();
+		}
+		else{
+			$(".hamburger").next().hide();
+			$(".hamburger").removeClass("hamburger-x");
+		}
+	})
 })

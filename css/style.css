@@ -13,6 +13,7 @@
 			background-color: #000;
 			border-radius: 50%;
 			cursor: pointer;
+			z-index: 999;
 		}
 		.goTop:hover{
 			background-color: #fff;
@@ -320,7 +321,7 @@
 			margin-top: 50px;
 			padding: 50px;
 			background-color: #000;
-			height: 420px;
+			height: 540px;
 		}
 		.about p, h2{
 			color: #fff;
@@ -344,6 +345,8 @@
 		.welcome p{
 			font-size: 32px;
 			font-family: Shadows Into Light;
+			width: 80%;
+			margin: auto;
 		}
 		.welcome a, .store a, .touch input[type = "submit"]{
 			color: #000;
@@ -835,7 +838,7 @@
 			font-family: Alegreya;
 			font-size: 16px;
 			text-align: left;
-			width: 250px;
+			width: auto;
 		}
 		.prefooter .col-4{
 			height: 250px;

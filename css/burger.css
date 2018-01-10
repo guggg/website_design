@@ -1,12 +1,13 @@
 .hamburger, .hamburger-x{
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 45px;
 	position: relative;
 	background-color: #FF0000;
+	margin-top: 10px;
 }
 .hamburger span, .hamburger-x span{
 	display: block;
-	width: 30px;
+	width: 25px;
 	height: 5px;
 	background-color: #fff;
 	margin: auto;
@@ -18,10 +19,10 @@
 	transition: all .2s;
 }
 .hamburger span::before, .hamburger span::after,
-.hamburger-x span::before, .hamburger-x span::after{
+.hamburger-x span::before, .hamburger-x span::after{	
 	content: "";
 	display: block;
-	width: 30px;
+	width: 25px;
 	height: 5px;
 	position: absolute;
 	background-color: #fff;
@@ -49,4 +50,24 @@
 	transform: rotate(-45deg);
 	bottom: 0;
 	transition: bottom .2s, transform 0.3s 0.3s;
+}
+
+@media screen and (min-width: 885px){
+	.hamburger{
+		display: none;
+	}
+}
+@media screen and (max-width: 884px){
+	.hamburger{
+		display: block;
+		float: right;
+	}
+	nav ul{
+		float: none;
+		clear: both;
+		display: none;
+	}
+	nav li{
+		float: none;
+	}
 }
